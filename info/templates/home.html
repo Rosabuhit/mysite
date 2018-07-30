@@ -18,13 +18,14 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
   </head>
+{% load staticfiles %}
 <style>
     body{
         background-color: white;
     }
 
     .upper{
-        background-color: white;
+        background: white;
      }
 
     .content-info{
@@ -43,8 +44,23 @@
     }
 
     .contact {
-        background: #;
+        position: relative;
+        display: inline-block;
         border-radius: 75px;
+    }
+    .contact h2 {
+        left: 0;
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        left: 5px;
+    }
+    .contact h4 {
+        left: 0;
+        position: absolute;
+        top: 75px;
+        width: 100%;
+        left: 5px;
     }
 </style>
 
@@ -53,10 +69,11 @@
   <div class="site-wrapper-inner"><div class="upper">
     <div class="cover-container"><div class="container">
       <div class="masthead clearfix">
-          <div class="jumbotron"><div class="contact">
-        <div class="container"><h2 align="center" class="display-4">Полное ведение бугалтерского </h2>
+          <div align="center" class="container"><div class="contact">
+            <p align="center"><img width="950" height="300" src="{% static "media/myexample.jpg" %}" /></p>
+            <h2 align="center" class="display-4">Полное ведение бугалтерского </h2>
         <h4 align="center">и налогового учета ООО и ИП</h4>
-        </div></div></div>
+        </div></div>
         <div class="inner cover">
             <div class="container"><div class="row">
                 <a class="nav-link"></a>
