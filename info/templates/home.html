@@ -40,8 +40,7 @@
     }
 
     .cover{
-        background-color: #00BFFF;
-        border-radius: 25px;
+        background-color: #83D3F8;
     }
 
     .contact {
@@ -49,12 +48,11 @@
         display: inline-block;
         border-radius: 75px;
     }
-    .contact h2 {
-        left: 0;
+    .logoTop {
+        left: 33%;
         position: absolute;
-        top: 50px;
-        width: 100%;
-        left: 5px;
+        top: 35px;
+        border-radius: 35px;
     }
     .contact h4 {
         left: 0;
@@ -78,19 +76,23 @@
     <div class="cover-container"><div class="container">
       <div class="masthead clearfix">
           <div align="center" class="container"><div class="contact">
-            <p align="center"><img width="950" height="300" src="{% static "media/myexample.jpg" %}" /></p>
-              <h2 align="center"><font face="Impact" size="20" color="#00BFFF">ООО "Строй Консалтинг"</font> </h2>
+            <p align="center"><img width="1050" height="375" src="{% static "media/myexample.jpg" %}" /></p>
+              <div class="logoTop" align="center"><!--<font face="Impact" size="20" color="#00BFFF">ООО "Строй Консалтинг"</font> -->
+                  <img width="350" height="150" src="{% static "media/logoTop.jpg" %}" />
+
+              </div>
+
         </div></div>
         <div class="inner cover">
             <div class="container"><div class="row">
                 <a class="nav-link"></a>
-      <a class="nav-link" href="#">Home </a>
+      <a class="nav-link" href="#">Главная </a>
         <a class="nav-link" href="#">Link</a>
             <a class="nav-link " href="#">Disabled</a>
         <div class="col-sm-6"></div>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Найти</button>
     </form>
   </div></div>
         </div></div></div>
@@ -99,7 +101,7 @@
 
 
 <div class="container"><div class="row"><div class="col-sm-8">
-            <p align="center"><img width="650" height="150" src="{% static "media/logo.jpg" %}" /></p>
+            <p align="center"><img width="325" height="75" src="{% static "media/logo.jpg" %}" /></p>
 <div class="jumbotron">
             <h4 align="center">Полное ведение бухгалтерского </h4>
         <h5 align="center">и налогового учета ООО и ИП</h5>
@@ -109,7 +111,7 @@
         <div class="col-sm-4"> <h6> +7 (495) 105-90-96</h6></div>
         <div class="col-sm-4"> <h6> 102691@mail.ru</h6></div></div>
         <div class="row"><div class="col-sm-4"><h6>+7 (926)306-88-53</h6></div>
-            <div class="col-sm-4"> <h6> luiza261091@rambler.ru</h6></div></div>
+            <div class="col-sm-4"> </div></div>
         <br />
         <a role="button" href="#" class="btn btn-outline-primary">Оформить заявку</a>
         <h6 align="right">г. Москва, Аргуновская улица д.2, корп.1, оф. 305</h6>
