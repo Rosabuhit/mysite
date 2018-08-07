@@ -125,4 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'ХОСТ_ВАШЕГО_ПОЧТОВОГО_SMTP_СЕРВЕРА' #Например, smtp.gmail.com
+EMAIL_HOST_USER = 'ВАШ_ЛОГИН_НА_СЕРВЕРЕ' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
+EMAIL_HOST_PASSWORD = 'ВАШ_ПАРОЛЬ_НА_СЕРВЕРЕ'
