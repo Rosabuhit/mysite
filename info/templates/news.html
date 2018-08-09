@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+    {% extends 'home.html' %}
+</head>
+<body>
+{% block content %}
+<div class="col-md-8">
+                    <h3 class="pb-3 mb-4 font-italic border-bottom">Новости</h3>
+                    {% if news %}
+                    {% for new in news %}
+                    <div class="blog-post">
+                        <h2 class="blog-post-title">{{ new.title }}</h2>
+                        <p class="blog-post-meta">{{ new.created_date }}
+                        <!--<p>{{ new.body | safe | truncatechars:300}}</p>-->
+                        <a href="#" class="btn btn-inline-info btn-rounded">Читать...</a>
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+{% endblock %}
+</body>
+</html>
