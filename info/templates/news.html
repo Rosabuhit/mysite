@@ -5,21 +5,40 @@
     <title>Новости</title>
     {% extends 'home.html' %}
 </head>
-<body>
-{% block content %}
-<div class="col-md-8">
-                    <h3 class="pb-3 mb-4 font-italic border-bottom">Новости</h3>
+<style>
+    .blog-post{
+        border-radius: 5px;
+        border: 4px double black;
+    }
+</style>
+{% block content %}<div class="container">
+<div align="center" class="container">
+                    <h3 align="center" class="pb-3 mb-4 font-italic border-bottom">Новости</h3>
+    <div align="center" class="row">
                     {% if news %}
                     {% for new in news %}
-                    <div class="blog-post">
+                    <div align="center" class="news">
                         <h2 class="blog-post-title">{{ new.title }}</h2>
                         <p class="blog-post-meta">{{ new.created_date }}
                         <!--<p>{{ new.body | safe | truncatechars:300}}</p>-->
-                        <a href="#" class="btn btn-inline-info btn-rounded">Читать...</a>
-                        </div>
+                            <br /><hr>
+                        <a href="#" class="btn btn-info btn-rounded">Читать...</a>
+                        </div><div class="col-sm-2"></div>
                     {% endfor %}
                     {% endif %}
-                </div>
+    </div><br /><hr />
+    <div class="cos-sm-4"></div>
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/news?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info btn-rounded">Назад</a>
+                {% endif %}
+                <span class="page-current">
+                    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/news?page={{ page_obj.next_page_number }}" class="btn btn-outline-info btn-rounded">Далее</a>
+                {% endif %}
+            </span>
+        </div>
+</div></html>
 {% endblock %}
-</body>
-</html>

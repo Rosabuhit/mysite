@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from info.models import News, ContactForm
 from django.utils import timezone
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, ListView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -38,25 +38,12 @@ def contactView(request):
 class PageView(TemplateView):
     template_name = "home.html"
 
-class NewsView(View):
+class NewsView(ListView):
+    model = News
+    context_object_name = 'news'
+    template_name = 'news.html'
+    paginate_by = 3
 
-    def get(self, request):
-        news = News.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
-        last_news = None
-
-        if len(news) > 0:
-            last_news = news[0]
-            if len(news) >= 5:
-                paginator = Paginator(news, 5)
-            else:
-                paginator = Paginator(news, len(news))
-            page = request.GET.get('page')
-            try:
-                news = paginator.page(page)
-            except PageNotAnInteger:
-                # If page is not an integer, deliver first page.
-                news = paginator.page(1)
-            except EmptyPage:
-                # If page is out of range (e.g. 9999), deliver last page of results.
-                news = paginator.page(paginator.num_pages)
-        return render(request, 'news.html', {'news': news, "last_news": last_news})
+    def get_queryset(self):
+        qs = News.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
+        return qs
