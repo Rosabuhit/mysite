@@ -20,9 +20,9 @@
                     <div align="center" class="news">
                         <h2 class="blog-post-title">{{ new.title }}</h2>
                         <p class="blog-post-meta">{{ new.created_date }}
-                        <!--<p>{{ new.body | safe | truncatechars:300}}</p>-->
+                        <p>{{ new.body | safe | truncatechars:30}}</p>
                             <br /><hr>
-                        <a href="#" class="btn btn-info btn-rounded">Читать...</a>
+                        <a href="{% url 'news_detail' pk=new.pk %}" class="btn btn-info btn-rounded">Читать...</a>
                         </div><div class="col-sm-2"></div>
                     {% endfor %}
                     {% endif %}

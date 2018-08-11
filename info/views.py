@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from info.models import News, ContactForm
 from django.utils import timezone
-from django.views.generic import TemplateView, View, ListView
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.views.generic import TemplateView, ListView
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 
@@ -47,3 +46,8 @@ class NewsView(ListView):
     def get_queryset(self):
         qs = News.objects.filter(created_date__lte=timezone.now()).order_by('-created_date')
         return qs
+
+
+def news_detail(request, pk):
+    news = get_object_or_404(News, pk=pk)
+    return render(request, 'news_detail.html', {'news': news})

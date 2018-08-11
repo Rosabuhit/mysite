@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'info',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,22 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'imap.gmail.com' #'ХОСТ_ВАШЕГО_ПОЧТОВОГО_SMTP_СЕРВЕРА' #Например, smtp.gmail.com
 EMAIL_HOST_USER = 'ld92049@gmail.com'#'ВАШ_ЛОГИН_НА_СЕРВЕРЕ' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
 EMAIL_HOST_PASSWORD = 'ogjqpass092z'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_CONFIGS = {
+       'default': {
+           'toolbar':[['Source', 'Link', 'Unlink', 'SpecialChar', 'Image', 'CodeSnippet',
+                       'Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript',
+                       'RemoveFormat', 'Image', 'Flash', 'Table', 'HorizontalRule', 'TextColor', 'BGColor', 'Smiley',
+                       'SpecialChar', 'Anchor', 'NumberedList', 'BulletedList', 'Outdent',
+                       'Indent', 'Blockquote', 'CreateDiv', 'JustifyLeft', 'JustifyCenter', 'JustifyRight',
+                       'JustifyBlock','BidiLtr', 'BidiRtl', 'Language', 'Save', 'NewPage', 'Preview', 'Print',
+                       'Templates', 'Cut', 'Copy', 'Paste', 'PasteText',
+                       'PasteFromWord', 'Undo', 'Redo', 'Find', 'Replace', 'SelectAll',
+                       'Scayt', 'Maximize', 'ShowBlocks']],
+           'height': 400,
+           'width': 900,
+           'removePlugins': 'stylesheetparser',
+           'extraPlugins': 'codesnippet',
+       },
+    }
