@@ -20,7 +20,6 @@
                     <div align="center" class="news">
                         <h2 class="blog-post-title">{{ new.title }}</h2>
                         <p class="blog-post-meta">{{ new.created_date }}
-                        <p>{{ new.body | safe | truncatechars:30}}</p>
                             <br /><hr>
                         <a href="{% url 'news_detail' pk=new.pk %}" class="btn btn-info btn-rounded">Читать...</a>
                         </div><div class="col-sm-2"></div>
@@ -31,12 +30,16 @@
             <span class="page-links">
                 {% if page_obj.has_previous %}
                     <a href="/news?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info btn-rounded">Назад</a>
+                {% else %}
+                    <a href="#" class="btn btn-outline-info btn-rounded">Назад</a>
                 {% endif %}
                 <span class="page-current">
-                    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+                    <button class="btn btn-info btn-rounded">{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</button>
                 </span>
                 {% if page_obj.has_next %}
                     <a href="/news?page={{ page_obj.next_page_number }}" class="btn btn-outline-info btn-rounded">Далее</a>
+                {% else %}
+                    <a href="#" class="btn btn-outline-info btn-rounded">это была последняя</a>
                 {% endif %}
             </span>
         </div>

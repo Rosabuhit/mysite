@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ news.title }}</title>
+    <title>Читать новость</title>
+    {% extends 'home.html' %}
 </head>
-<body>
-
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <h1 align="center">{{ news.title }}</h1>
+    <div align="center" class="date"><i>{{ news.created_date }}</i></div>
+    <div class="jumbotron"><div class="content-info">
+    <p>{{ news.body | safe }}</p>
+    </div></div>
+</div>
+{% endblock %}
