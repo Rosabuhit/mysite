@@ -94,10 +94,10 @@
       <a class="nav-link" href="{% url 'home' %}">Главная </a>
         <a class="nav-link" href="{% url 'news' %}">Новости</a>
             <a class="nav-link " href="#">Disabled</a>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Найти</button>
-    </form>
+    <form class="form-inline" action="/search/" method="get">
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
+            </form>
                 </div></div></div></div>
         </div></div></div></div></div></div>
       <hr color="#83D3F8">
