@@ -21,8 +21,8 @@
                         <h2 class="blog-post-title">{{ new.title }}</h2>
                         <p class="blog-post-meta">{{ new.created_date }}
                             <br /><hr>
-                        <a href="{% url 'news_detail' pk=new.pk %}" class="btn btn-info btn-rounded">Читать...</a>
-                        </div><div class="col-sm-2"></div>
+                        <a href="{% url 'news_detail' pk=new.pk %}" class="btn btn-outline-info btn-rounded">Узнать подробней</a>
+                        </div><div class="col-sm-1"></div>
                     {% endfor %}
                     {% endif %}
     </div><br /><hr />

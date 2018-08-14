@@ -6,16 +6,36 @@
     {% extends 'home.html' %}
 </head>
 <body>
-{% block content %}
-{% for res in result %}
+    {% block content %}
+<div class="container">
+    {% if result %}
+        <h3 align="center">Результаты поиска:</h3>
+    <hr>
+        {% for res in result %}
             {% if res %}
                 {% for r in res %}
-                    <h4><a href="{{ r.get_absolute_url }}">{{ r.title }}</a></h4>
-                <h6>{{ r.body | truncatewords:20 }}</h6>
-                <p></p>
+                    <h4 align="center"><a href="{{ r.get_absolute_url }}">{{ r.title }}</a></h4><hr />
                 {% endfor %}
             {% endif %}
         {% endfor %}
-{% endblock %}
+
+            <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if result.has_next %}
+                            <a href="?q={{ add_res }}" class="btn btn-info btn-rounded">еще…</a>
+                        {% endif %}
+                    </span>
+                </div>
+
+            </div>
+            </div></div>
+        {% else %}
+            <div class="container">
+                <h3 align="center">Строка поиска была пустой</h3>
+            </div>
+        {% endif %}
+    {% endblock %}
 </body>
 </html>

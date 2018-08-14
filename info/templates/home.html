@@ -93,10 +93,10 @@
                 <div class="container"><div class="row">
       <a class="nav-link" href="{% url 'home' %}">Главная </a>
         <a class="nav-link" href="{% url 'news' %}">Новости</a>
-            <a class="nav-link " href="#">Disabled</a>
+            <a class="nav-link" href='{% url "contact" %}'>Обратная связь</a>
     <form class="form-inline" action="/search/" method="get">
-                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Введите запрос" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
+                <input class="form-control mr-sm-2" type="text" name="q" placeholder="Что ищем?" aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Найти</button>
             </form>
                 </div></div></div></div>
         </div></div></div></div></div></div>
@@ -136,7 +136,7 @@
       <div class="container">
       <div class="mastfoot">
         <div class="inner">
-          <p>&copy; ООО <a href="https://templateflip.com/" target="_blank">"Строй Консалтинг" </a></p>
+          <p>&copy; ООО <a target="_blank">"Строй Консалтинг" </a></p>
         </div>
       </div>
       </div>
