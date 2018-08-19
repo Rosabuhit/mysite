@@ -131,7 +131,7 @@ USE_TZ = True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'imap.gmail.com' #'ХОСТ_ВАШЕГО_ПОЧТОВОГО_SMTP_СЕРВЕРА' #Например, smtp.gmail.com
 EMAIL_HOST_USER = 'ld92049@gmail.com'#'ВАШ_ЛОГИН_НА_СЕРВЕРЕ' #Например, user@gmail.com. Именно его необходимо указывать как ВАШ_EMAIL_ДЛЯ_ОТПРАВКИ_СООБЩЕНИЯ в исходном коде предыдущего пункта
-EMAIL_HOST_PASSWORD = 'ogjqpass092z'
+EMAIL_HOST_PASSWORD = 'ogjq092z'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
